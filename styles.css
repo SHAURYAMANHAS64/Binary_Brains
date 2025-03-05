@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Martel+Sans&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu&family=Varela+Round&display=swap');
+
+:root {
+    --primary-teal: #2ab4a5;
+    --secondary-teal: #1e8f82;
+    --light-background: #f4f7f6;
+    --soft-grey: #6b7d7d;
+    --text-color: #333333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: var(--light-background);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Logo and Navigation */
+.header {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 5px 0;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    margin: 1vw;
+    border-radius: 2vw;
+    height: 100px;
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        height: auto;
+        padding: 20px 0;
+    }
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    width: 170px;
+    border-radius: 50%;
+}
+
+.logo-icon {
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-teal);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    font-weight: bold;
+}
+
+.logo-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--primary-teal);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+}
+
+.nav-links li {
+    margin: 4vw;
+    font-size: larger;
+}
+
+@media (max-width: 768px) {
+    .nav-links li {
+        margin: 10px 0;
+    }
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--soft-grey);
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary-teal);
+    text-decoration: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.cta-button {
+    background-color: var(--primary-teal);
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 2vw;
+    padding-left: 2vw;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+
+/* Hero Section */
+.hero {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, rgba(42, 180, 165, 0.1) 0%, rgba(42, 180, 165, 0.2) 100%);
+    padding: 4vw 0vw;
+    margin: 0vw;
+    border-radius: 2vw;
+
+}
+
+.hero-content {
+    flex: 1;
+    padding-left: 2vw;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    color: var(--primary-teal);
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: var(--text-color);
+}
+
+.hero-image {
+    flex: 1;
+    text-align: right;
+}
+
+.hero-image img {
+    max-width: 85%;
+    height: auto;
+    border-radius: 55%;
+    margin-right: 3.5vw;
+}
+
+/* Services Section */
+.services {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 50px;
+}
+
+.service-card {
+    background-color: white;
+    padding: 30px;
+    text-align: center;
+    border-radius: 10px;
+    width: 30%;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+}
+.service-card video {
+    width: 10vw;
+    height: 10vw;
+}
+
+.service-card h3 {
+    color: var(--primary-teal);
+    margin-bottom: 15px;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--primary-teal);
+    color: white;
+    padding: 3vw 10vw 4vw 9vw;
+    margin-top: 3vw;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+}

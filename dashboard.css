@@ -1,0 +1,299 @@
+/* Dashboard Styling */
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Martel+Sans&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu&family=Varela+Round&display=swap');
+
+.dashboard {
+    width: 90%;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.dashboard h1 {
+    color: var(--primary-teal);
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.dashboard p {
+    font-size: 18px;
+    color: var(--text-color);
+    margin-bottom: 30px;
+}
+
+/* Complaint Categories */
+.categories {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.category-card {
+    background: var(--light-background);
+    padding: 20px;
+    width: 22%;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+}
+
+.category-card h3 {
+    color: var(--secondary-teal);
+    margin-bottom: 10px;
+}
+
+.category-card p {
+    font-size: 14px;
+    color: var(--text-color);
+}
+
+/* Complaint Form */
+.complaint-form {
+    background: var(--light-background);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.complaint-form h2 {
+    color: var(--primary-teal);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.complaint-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: var(--text-color);
+}
+
+.complaint-form select,
+.complaint-form textarea,
+.complaint-form input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid var(--soft-grey);
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.complaint-form button {
+    width: 100%;
+    padding: 10px;
+    background: var(--primary-teal);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.complaint-form button:hover {
+    background: var(--secondary-teal);
+}
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Martel+Sans&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu&family=Varela+Round&display=swap');
+
+:root {
+    --primary-teal: #2ab4a5;
+    --secondary-teal: #1e8f82;
+    --light-background: #f4f7f6;
+    --soft-grey: #6b7d7d;
+    --text-color: #333333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: var(--light-background);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Logo and Navigation */
+.header {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 5px 0;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    margin: 1vw;
+    border-radius: 2vw;
+    height: 100px;
+}
+.header a{
+    margin-right: 10px;
+}
+.logo {
+
+    display: flex;
+    align-items: center;
+    width: 170px;
+    border-radius: 50%;
+}
+
+.logo-icon {
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-teal);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    font-weight: bold;
+}
+
+.logo-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--primary-teal);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    margin-right: 3vw;
+}
+.nav-links li {
+    /* margin-left: 20px; */
+    margin: 4vw;
+    font-size: larger;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--soft-grey);
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary-teal);
+    text-decoration: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+.cta-button {
+    background-color: var(--primary-teal);
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 2vw;
+    padding-left: 2vw;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+
+/* Hero Section */
+.hero {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, rgba(42, 180, 165, 0.1) 0%, rgba(42, 180, 165, 0.2) 100%);
+    padding: 100px 0;
+    margin: 1vw;
+    border-radius: 1vw;
+
+}
+
+.hero-content {
+    flex: 1;
+    padding-left: 2vw;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    color: var(--primary-teal);
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: var(--text-color);
+}
+
+.hero-image {
+    flex: 1;
+    text-align: right;
+}
+
+.hero-image img {
+    max-width: 85%;
+    height: auto;
+    border-radius: 55%;
+    margin-right: 3.5vw;
+}
+
+/* Services Section */
+.services {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 50px;
+}
+
+.service-card {
+    background-color: white;
+    padding: 30px;
+    text-align: center;
+    border-radius: 10px;
+    width: 30%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+}
+
+.service-card img {
+    max-width: 100px;
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    color: var(--primary-teal);
+    margin-bottom: 15px;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--primary-teal);
+    color: white;
+    padding: 50px 0;
+    margin-top: 50px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+}

@@ -1,0 +1,88 @@
+/* Contact Us Section */
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Martel+Sans&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu&family=Varela+Round&display=swap');
+
+.contact-us {
+    text-align: center;
+    padding: 50px 20px;
+    background: var(--light-background);
+    border-radius: 10px;
+    margin: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contact-us h1 {
+    font-size: 36px;
+    color: var(--primary-teal);
+    margin-bottom: 20px;
+}
+
+.contact-us p {
+    font-size: 18px;
+    color: var(--text-color);
+    max-width: 800px;
+    margin: 0 auto 30px;
+}
+
+/* Contact Form */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.contact-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: var(--text-color);
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid var(--soft-grey);
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 10px;
+    background: var(--primary-teal);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.contact-form button:hover {
+    background: var(--secondary-teal);
+}
+
+/* Contact Information */
+.contact-info {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.contact-info h2 {
+    font-size: 28px;
+    color: var(--primary-teal);
+    margin-bottom: 15px;
+}
+
+.contact-info p {
+    font-size: 16px;
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+footer p{
+    margin-left: 34vw;
+}

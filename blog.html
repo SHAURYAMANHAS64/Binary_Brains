@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>She - Blog Experiences</title>
+    <link rel="icon" href="assests/Black and Grey Square Social Logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="blog.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <img class="logo" src="assests/final 2.jpg" alt="">
+        </div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Self Defense</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+    </header>
+
+    <!-- Blog Section -->
+    <section class="blog-section">
+        <h1>Share Your Experience</h1>
+        <p>Empower others by sharing your story of resilience and survival.</p>
+
+        <!-- Search Bar -->
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search experiences...">
+            <button id="search-button">Search</button>
+        </div>
+
+        <!-- Blog Post Form -->
+        <section class="blog-form">
+            <h2>Write Your Experience</h2>
+            <form id="blog-post-form">
+                <label for="category">Experience Category:</label>
+                <select id="category" name="category" required>
+                    <option value="stalking">Stalking</option>
+                    <option value="harassment">Harassment</option>
+                    <option value="domestic-violence">Domestic Violence</option>
+                    <option value="cyberbullying">Cyberbullying</option>
+                    <option value="self-defense">Self Defense</option>
+                    <option value="other">Other</option>
+                </select>
+
+                <label for="title">Post Title:</label>
+                <input type="text" id="title" name="title" required placeholder="Give your post a title">
+
+                <label for="experience">Your Experience:</label>
+                <textarea id="experience" name="experience" rows="7" placeholder="Share your story..." required></textarea>
+
+                <label for="key-takeaway">Key Takeaway:</label>
+                <textarea id="key-takeaway" name="key-takeaway" rows="3" placeholder="What did you learn? What advice can you share?" required></textarea>
+
+                <button type="submit">Post Experience</button>
+            </form>
+        </section>
+
+        <!-- Blog Posts Container -->
+        <section id="blog-posts-container" class="blog-posts">
+            <!-- Posts will be dynamically added here -->
+        </section>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div>
+                <h4>She - Experiences Portal</h4>
+                <p>Your story, your strength, your support.</p>
+            </div>
+            <div>
+                <h4>Support Helpline</h4>
+                <p>Emergency: 1800-SUPPORT</p>
+                <p>Counseling: 1800-CARE</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="blog.js"></script>
+</body>
+</html>
