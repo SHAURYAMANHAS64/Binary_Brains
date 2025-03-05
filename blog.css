@@ -48,7 +48,7 @@ body {
     display: flex;
     list-style: none;
     justify-content: space-around;
-    margin-right: 19vw;
+    margin-right: 4vw;
 }
 
 .nav-links li {
@@ -66,6 +66,17 @@ body {
     color: var(--primary-teal);
     text-decoration: none;
 }
+.cta-button {
+    background-color: var(--primary-teal);
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 2vw;
+    padding-left: 2vw;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
 
 /* Blog Section Styles */
 .blog-section {
@@ -184,6 +195,7 @@ body {
     padding: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
+    border: 2px solid var(--secondary-teal);
 }
 
 .blog-post:hover {
@@ -203,6 +215,7 @@ body {
     font-size: 14px;
     margin-bottom: 10px;
     display: inline-block;
+    
 }
 
 .blog-post .experience,
@@ -221,4 +234,13 @@ body {
 .footer-content {
     display: flex;
     justify-content: space-around;
+}
+.delete-button {
+    background-color: var(--primary-teal);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }

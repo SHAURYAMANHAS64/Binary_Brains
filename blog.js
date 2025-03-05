@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <strong>Key Takeaway:</strong>
                 <p>${post.keyTakeaway}</p>
             </div>
-            <button onclick="deleteBlogPost(${index})">Delete</button>
+            <button onclick="deleteBlogPost(${index})" class = "delete-button">Delete</button>
         `;
         return postDiv;
     }
@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const blogPosts = document.querySelectorAll('.blog-post');
 
         blogPosts.forEach(post => {
-            const title = post.querySelector('h3').textContent.toLowerCase();
+            const title = post.querySelector('h3').textContent.toUpperCase();
             const experience = post.querySelector('.experience p').textContent.toLowerCase();
             const category = post.querySelector('.category').textContent.toLowerCase();
 
