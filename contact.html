@@ -15,8 +15,9 @@
         </div>
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
+            <li><a href="blog.html">Blogs</a></li>
             <li><a href="about.html">About</a></li>
-            <li><a href="index.html">Self Defense</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
         </ul>
         <a href="index.html" class="cta-button">Go Back</a>
     </header>
@@ -27,7 +28,7 @@
         <p>If you have any questions or need support, feel free to reach out to us.</p>
         
         <div class="contact-form">
-            <form action="#" method="POST">
+            <form id="contactForm" onsubmit="handleSubmit(event)">
                 <label for="name">Full Name</label>
                 <input type="text" id="name" name="name" required>
                 
@@ -37,7 +38,8 @@
                 <label for="message">Message</label>
                 <textarea id="message" name="message" rows="5" required></textarea>
                 
-                <button type="submit">Send Message</button>
+                <button type="submit" id="submitBtn">Send Message</button>
+                <div id="statusMessage" class="status-message"></div>
             </form>
         </div>
     </section>
@@ -54,5 +56,7 @@
     <footer class="footer">
         <p>&copy; 2025 She Complaint Portal. Your safety, your voice, your journey.</p>
     </footer>
+
+    <script src="contact.js"></script>
 </body>
 </html>
