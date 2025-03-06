@@ -193,7 +193,11 @@ body {
     color: var(--primary-teal);
     margin-bottom: 15px;
 }
-
+.technique-card img{
+    width: 5vw;
+    margin-left: 51vw;
+    margin-top: -6vw;
+}
 /* Footer */
 .footer {
     background-color: var(--primary-teal);
