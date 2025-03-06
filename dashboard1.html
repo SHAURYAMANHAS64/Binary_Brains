@@ -13,23 +13,22 @@
     <!-- Header -->
     <header class="header ">
         <div class="logo">
-        <img class="logo" src="assests/final 2.jpg" alt="">
-    </div>
+            <img class="logo" src="assests/final 2.jpg" alt="">
+        </div>
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
-            <li><a href="index.html">Self Defense</a></li>
+            <li><a href="blog.html">Blogs</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="contact.html">Contact Us</a></li>
         </ul>
         <a href="index.html" class="cta-button">Go Back</a>
     </header>
 
-
     <!-- Dashboard Section -->
     <section class="dashboard">
-        <h1>Report a Complaint</h1>
+        <h1>Get Support</h1>
         <p>Choose a category and register your complaint anonymously.</p>
-        
+
         <div class="categories">
             <div class="category-card">
                 <h3>Stalking</h3>
@@ -49,7 +48,7 @@
             </div>
         </div>
         <section class="complaint-form">
-            <h2>Register Your Complaint</h2>
+            <h2>Get Support</h2>
             <form id="complaintForm">
                 <label for="category">Category:</label>
                 <select id="category">
@@ -58,22 +57,20 @@
                     <option value="Assault">Abuse</option>
                     <option value="CyberCrime">CyberCrime</option>
                 </select>
-            
+
                 <label for="description">Description:</label>
                 <textarea id="description" required></textarea>
-            
+
                 <label for="evidence">Upload Evidence (Optional):</label>
                 <input type="file" id="evidence" accept="image/*,application/pdf">
-            
+
                 <button type="submit">Submit</button>
             </form>
-            
+
             <div id="complaintsList"></div>
-            
-            <script src="dashboard_script.js"></script>
-            
+
         </section>
-        
+
     </section>
 
     <!-- Footer -->
@@ -91,96 +88,92 @@
         </div>
     </footer>
     <script>
-       document.addEventListener("DOMContentLoaded", function () {
-    const complaintForm = document.getElementById("complaintForm");
-    const complaintsList = document.getElementById("complaintsList");
+        document.addEventListener("DOMContentLoaded", function () {
+            const complaintForm = document.getElementById("complaintForm");
+            const complaintsList = document.getElementById("complaintsList");
 
-    complaintForm.addEventListener("submit", function (event) {
-        event.preventDefault();
+            complaintForm.addEventListener("submit", function (event) {
+                event.preventDefault();
 
-        // Get form values
-        const category = document.getElementById("category").value;
-        const description = document.getElementById("description").value;
-        const evidenceInput = document.getElementById("evidence");
-        const evidenceFile = evidenceInput.files[0];
+                // Get form values
+                const category = document.getElementById("category").value;
+                const description = document.getElementById("description").value;
+                const evidenceInput = document.getElementById("evidence");
+                const evidenceFile = evidenceInput.files[0];
 
-        let evidenceURL = "";
-        if (evidenceFile) {
-            evidenceURL = URL.createObjectURL(evidenceFile);
-        }
-
-        // Get location
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(
-                function (position) {
-                    const latitude = position.coords.latitude;
-                    const longitude = position.coords.longitude;
-
-                    saveComplaint(category, description, evidenceURL, latitude, longitude);
-                },
-                function (error) {
-                    console.error("Error getting location:", error);
-                    // Save complaint even if location fails
-                    saveComplaint(category, description, evidenceURL, "Location not available", "Location not available");
+                let evidenceURL = "";
+                if (evidenceFile) {
+                    evidenceURL = URL.createObjectURL(evidenceFile);
                 }
-            );
-        } else {
-            alert("Geolocation is not supported by this browser.");
-        }
-    });
 
-    function saveComplaint(category, description, evidence, latitude, longitude) {
-        const complaint = {
-            category,
-            description,
-            evidence,
-            location: `Lat: ${latitude}, Long: ${longitude}`,
-            date: new Date().toLocaleString()
-        };
+                // Get location
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(
+                        function (position) {
+                            const latitude = position.coords.latitude;
+                            const longitude = position.coords.longitude;
 
-        // Save to localStorage
-        let complaints = JSON.parse(localStorage.getItem("complaints")) || [];
-        complaints.push(complaint);
-        localStorage.setItem("complaints", JSON.stringify(complaints));
+                            saveComplaint(category, description, evidenceURL, latitude, longitude);
+                        },
+                        function (error) {
+                            console.error("Error getting location:", error);
+                            saveComplaint(category, description, evidenceURL, "Location not available", "Location not available");
+                        }
+                    );
+                } else {
+                    alert("Geolocation is not supported by this browser.");
+                }
+            });
 
-        // Reset form
-        complaintForm.reset();
+            function saveComplaint(category, description, evidence, latitude, longitude) {
+                const complaint = {
+                    category,
+                    description,
+                    evidence,
+                    latitude,
+                    longitude,
+                    date: new Date().toLocaleString()
+                };
 
-        // Refresh complaint list
-        displayComplaints();
-    }
+                let complaints = JSON.parse(localStorage.getItem("complaints")) || [];
+                complaints.push(complaint);
+                localStorage.setItem("complaints", JSON.stringify(complaints));
 
-    function displayComplaints() {
-        complaintsList.innerHTML = "";
-        const complaints = JSON.parse(localStorage.getItem("complaints")) || [];
+                complaintForm.reset();
+                displayComplaints();
+            }
 
-        complaints.forEach((complaint, index) => {
-            const complaintItem = document.createElement("div");
-            complaintItem.classList.add("complaint-item");
-            complaintItem.innerHTML = `
+            function displayComplaints() {
+                complaintsList.innerHTML = "";
+                const complaints = JSON.parse(localStorage.getItem("complaints")) || [];
+
+                complaints.forEach((complaint, index) => {
+                    const complaintItem = document.createElement("div");
+                    complaintItem.classList.add("complaint-item");
+                    complaintItem.innerHTML = `
                 <h3>Category: ${complaint.category}</h3>
                 <p>${complaint.description}</p>
                 <small>Filed on: ${complaint.date}</small>
-                <p><strong>Location:</strong> ${complaint.location}</p>
+                <p><strong>Location:</strong> Lat: ${complaint.latitude}, Long: ${complaint.longitude}</p>
+                ${complaint.latitude !== "Location not available" ? `<p><a style="color: var(--secondary-teal); text-decoration: none;" href="https://www.google.com/maps?q=${complaint.latitude},${complaint.longitude}" target="_blank">View on Map</a></p>` : "<p>Location not available</p>"}
                 ${complaint.evidence ? `<p><a href="${complaint.evidence}" target="_blank">View Evidence</a></p>` : ""}
                 <button onclick="deleteComplaint(${index})">Delete</button>
             `;
-            complaintsList.appendChild(complaintItem);
+                    complaintsList.appendChild(complaintItem);
+                });
+            }
+
+            window.deleteComplaint = function (index) {
+                let complaints = JSON.parse(localStorage.getItem("complaints")) || [];
+                complaints.splice(index, 1);
+                localStorage.setItem("complaints", JSON.stringify(complaints));
+                displayComplaints();
+            };
+
+            displayComplaints();
         });
-    }
-
-    window.deleteComplaint = function (index) {
-        let complaints = JSON.parse(localStorage.getItem("complaints")) || [];
-        complaints.splice(index, 1);
-        localStorage.setItem("complaints", JSON.stringify(complaints));
-        displayComplaints();
-    };
-
-    // Display existing complaints on load
-    displayComplaints();
-});
-
 
     </script>
 </body>
+
 </html>
